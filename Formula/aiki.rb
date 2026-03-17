@@ -25,11 +25,11 @@ class Aiki < Formula
   license "MPL-2.0"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin": {},
-    "x86_64-unknown-linux-gnu": {}
-  }
+    "x86_64-apple-darwin":       {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -47,18 +47,10 @@ class Aiki < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "aiki", "otel_decode"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "aiki", "otel_decode"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "aiki", "otel_decode"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "aiki", "otel_decode"
-    end
+    bin.install "aiki", "otel_decode" if OS.mac? && Hardware::CPU.arm?
+    bin.install "aiki", "otel_decode" if OS.mac? && Hardware::CPU.intel?
+    bin.install "aiki", "otel_decode" if OS.linux? && Hardware::CPU.arm?
+    bin.install "aiki", "otel_decode" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
