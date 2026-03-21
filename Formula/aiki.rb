@@ -23,6 +23,7 @@ class Aiki < Formula
     end
   end
   license "MPL-2.0"
+  depends_on "jj"
 
   BINARY_ALIASES = {
     "aarch64-apple-darwin":      {},
