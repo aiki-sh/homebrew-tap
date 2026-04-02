@@ -1,36 +1,36 @@
 class Aiki < Formula
   desc "AI-native task tracking and agent orchestration CLI"
   homepage "https://github.com/glasner/aiki"
-  version "0.2.4"
+  version "0.2.5"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/glasner/aiki/releases/download/v0.2.4/aiki-aarch64-apple-darwin.tar.xz"
-      sha256 "cfac37db544932d70de5b92a8fb9f2b7341e318ec4ef53faefcd90c3a45421ba"
+      url "https://github.com/glasner/aiki/releases/download/v0.2.5/aiki-aarch64-apple-darwin.tar.xz"
+      sha256 "09a4f9abf471bcb8a4021adcb3c7138a61783dd5a1db760c3b237eb6b03f2b7d"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/glasner/aiki/releases/download/v0.2.4/aiki-x86_64-apple-darwin.tar.xz"
-      sha256 "828c85de15654c9d4b951c579d71b522f7deec81c2b1c4b162c2e239e72b62b7"
+      url "https://github.com/glasner/aiki/releases/download/v0.2.5/aiki-x86_64-apple-darwin.tar.xz"
+      sha256 "4d42ce241494f379df48ed3e4d0efa22c4b1a7b6bdd3a4a5c28c1f485183362b"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/glasner/aiki/releases/download/v0.2.4/aiki-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "f6c98446826b1e7d93d5d02cae01dd91ab44a52a64633b594223f9cf47da0322"
+      url "https://github.com/glasner/aiki/releases/download/v0.2.5/aiki-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "85e28ed33a2d6f57116a0b662859f9d8ee685313d3f94238da79b5632c56fbfe"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/glasner/aiki/releases/download/v0.2.4/aiki-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "fd88e6759b609527160301857f44e795a00707980b222b76b8c40a4d6cc1938f"
+      url "https://github.com/glasner/aiki/releases/download/v0.2.5/aiki-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "b8860b86c336806a0946f161f047848fddc786acdd3b4d1ed4d5858cefa06963"
     end
   end
   license "MPL-2.0"
 
   BINARY_ALIASES = {
-    "aarch64-apple-darwin": {},
+    "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
-    "x86_64-apple-darwin": {},
-    "x86_64-pc-windows-gnu": {},
-    "x86_64-unknown-linux-gnu": {}
-  }
+    "x86_64-apple-darwin":       {},
+    "x86_64-pc-windows-gnu":     {},
+    "x86_64-unknown-linux-gnu":  {},
+  }.freeze
 
   def target_triple
     cpu = Hardware::CPU.arm? ? "aarch64" : "x86_64"
@@ -48,18 +48,10 @@ class Aiki < Formula
   end
 
   def install
-    if OS.mac? && Hardware::CPU.arm?
-      bin.install "aiki", "otel_decode"
-    end
-    if OS.mac? && Hardware::CPU.intel?
-      bin.install "aiki", "otel_decode"
-    end
-    if OS.linux? && Hardware::CPU.arm?
-      bin.install "aiki", "otel_decode"
-    end
-    if OS.linux? && Hardware::CPU.intel?
-      bin.install "aiki", "otel_decode"
-    end
+    bin.install "aiki", "otel_decode" if OS.mac? && Hardware::CPU.arm?
+    bin.install "aiki", "otel_decode" if OS.mac? && Hardware::CPU.intel?
+    bin.install "aiki", "otel_decode" if OS.linux? && Hardware::CPU.arm?
+    bin.install "aiki", "otel_decode" if OS.linux? && Hardware::CPU.intel?
 
     install_binary_aliases!
 
