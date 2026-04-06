@@ -1,25 +1,25 @@
 class Aiki < Formula
   desc "AI-native task tracking and agent orchestration CLI"
   homepage "https://github.com/glasner/aiki"
-  version "0.2.5"
+  version "0.2.6"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/glasner/aiki/releases/download/v0.2.5/aiki-aarch64-apple-darwin.tar.xz"
-      sha256 "09a4f9abf471bcb8a4021adcb3c7138a61783dd5a1db760c3b237eb6b03f2b7d"
+      url "https://github.com/glasner/aiki/releases/download/v0.2.6/aiki-aarch64-apple-darwin.tar.xz"
+      sha256 "4d7127942fcd3b8494c6c4ce897aa01831dba5fd1903258d42d9edbaf1fb18dc"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/glasner/aiki/releases/download/v0.2.5/aiki-x86_64-apple-darwin.tar.xz"
-      sha256 "4d42ce241494f379df48ed3e4d0efa22c4b1a7b6bdd3a4a5c28c1f485183362b"
+      url "https://github.com/glasner/aiki/releases/download/v0.2.6/aiki-x86_64-apple-darwin.tar.xz"
+      sha256 "84106a8cbe6ccee9c0e94ec1007204d6326e209e31c22363f3aaaadc1ef94157"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/glasner/aiki/releases/download/v0.2.5/aiki-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "85e28ed33a2d6f57116a0b662859f9d8ee685313d3f94238da79b5632c56fbfe"
+      url "https://github.com/glasner/aiki/releases/download/v0.2.6/aiki-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "ce8c058058b3c57785f8d22164c4c924b5e002d2f1e8e1865989c2c19214e176"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/glasner/aiki/releases/download/v0.2.5/aiki-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "b8860b86c336806a0946f161f047848fddc786acdd3b4d1ed4d5858cefa06963"
+      url "https://github.com/glasner/aiki/releases/download/v0.2.6/aiki-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "e775e4254279557f92797ff24fca3de997e7062befb2c0dd5c4fb56a72c40d92"
     end
   end
   license "MPL-2.0"
