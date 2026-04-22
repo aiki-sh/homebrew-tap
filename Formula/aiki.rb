@@ -1,25 +1,25 @@
 class Aiki < Formula
   desc "AI-native task tracking and agent orchestration CLI"
   homepage "https://github.com/glasner/aiki"
-  version "0.2.6"
+  version "0.2.7"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/glasner/aiki/releases/download/v0.2.6/aiki-aarch64-apple-darwin.tar.xz"
-      sha256 "4d7127942fcd3b8494c6c4ce897aa01831dba5fd1903258d42d9edbaf1fb18dc"
+      url "https://github.com/glasner/aiki/releases/download/v0.2.7/aiki-aarch64-apple-darwin.tar.xz"
+      sha256 "ab1108c1d050df4ef64f3dc4083ff9ccc9c0f2c7fe90a76452b0552d9ef80ded"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/glasner/aiki/releases/download/v0.2.6/aiki-x86_64-apple-darwin.tar.xz"
-      sha256 "84106a8cbe6ccee9c0e94ec1007204d6326e209e31c22363f3aaaadc1ef94157"
+      url "https://github.com/glasner/aiki/releases/download/v0.2.7/aiki-x86_64-apple-darwin.tar.xz"
+      sha256 "e0a46b353432f613e281b13bf9c8bc22727ebfa44c3def4e26080ee0e7500d37"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/glasner/aiki/releases/download/v0.2.6/aiki-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "ce8c058058b3c57785f8d22164c4c924b5e002d2f1e8e1865989c2c19214e176"
+      url "https://github.com/glasner/aiki/releases/download/v0.2.7/aiki-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "50e3f4e58b694a9e0b080f2215b95d003c506bbe41c782c96285f7bc806c32dd"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/glasner/aiki/releases/download/v0.2.6/aiki-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "e775e4254279557f92797ff24fca3de997e7062befb2c0dd5c4fb56a72c40d92"
+      url "https://github.com/glasner/aiki/releases/download/v0.2.7/aiki-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "f23d4d85137ff4a709385e4c6916618714c5d0bcd8a505dfdedd023716aed40e"
     end
   end
   license "MPL-2.0"
@@ -28,7 +28,6 @@ class Aiki < Formula
     "aarch64-apple-darwin":      {},
     "aarch64-unknown-linux-gnu": {},
     "x86_64-apple-darwin":       {},
-    "x86_64-pc-windows-gnu":     {},
     "x86_64-unknown-linux-gnu":  {},
   }.freeze
 
